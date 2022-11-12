@@ -1,0 +1,133 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  /* stylelint-disable-next-line csstree/validator */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  will-change: filter;
+  cursor: pointer;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: #cbccdf;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: seagreen;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  justify-content: space-between;
+  width: 80%;
+  padding: 0 3rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  list-style: none;
+  gap: 1.5rem;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.form {
+  width: 100%;
+  max-width: 350px;
+  margin: 3rem auto;
+  align-items: center;
+}
+
+input[type="button"],
+.submitBtn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+input[type="submit"].submitBtn {
+  width: 100px;
+  height: 36px;
+}
+
+input[type="button"]:hover,
+.submitBtn:hover {
+  border-color: #646cff;
+}
+
+input[type="button"]:focus,
+input[type="button"]:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #fff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  input[type="button"],
+  .submitBtn {
+    background-color: #f9f9f9;
+  }
+}
