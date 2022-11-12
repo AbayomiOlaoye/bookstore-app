@@ -12,24 +12,68 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  will-change: filter;
+  cursor: pointer;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #cbccdf;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: seagreen;
 }
 
 body {
   margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  justify-content: space-between;
+  width: 80%;
+  padding: 0 3rem;
+}
+
+.flex {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+}
+
+.navLinks {
+  list-style: none;
+  gap: 1.5rem;
 }
 
 h1 {
@@ -37,7 +81,15 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.form {
+  width: 100%;
+  max-width: 350px;
+  margin: 3rem auto;
+  align-items: center;
+}
+
+input[type="button"],
+.submitBtn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -49,12 +101,18 @@ button {
   transition: border-color 0.25s;
 }
 
-button:hover {
+input[type="submit"].submitBtn {
+  width: 100px;
+  height: 36px;
+}
+
+input[type="button"]:hover,
+.submitBtn:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+input[type="button"]:focus,
+input[type="button"]:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -68,7 +126,8 @@ button:focus-visible {
     color: #747bff;
   }
 
-  button {
+  input[type="button"],
+  .submitBtn {
     background-color: #f9f9f9;
   }
 }
