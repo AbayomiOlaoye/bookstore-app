@@ -1,4 +1,5 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
 import BooksRedux from './books/books';
 import CategoryRedux from './categories/categories';
 
@@ -7,6 +8,6 @@ const reducers = combineReducers({
   Category: CategoryRedux,
 });
 
-const safe = configureStore({ reducer: reducers });
+const safe = configureStore({ reducer: reducers }, applyMiddleware(thunk));
 
 export default safe;
