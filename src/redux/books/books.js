@@ -1,5 +1,5 @@
 const ADD_BOOK = 'BookStore/books/ADD_BOOK';
-const REMOVE_BOOK = 'BookStore/book/REMOVE_BOOK';
+const REMOVE_BOOK = 'BookStore/books/REMOVE_BOOK';
 
 const prevState = [];
 
@@ -15,7 +15,7 @@ const removeBook = (id) => ({
 });
 
 // Reducer part
-const BooksReducers = (state = prevState, action) => {
+const BooksRedux = (state = prevState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
@@ -31,4 +31,4 @@ const BooksReducers = (state = prevState, action) => {
   }
 };
 export { addBook, removeBook };
-export default BooksReducers;
+export default BooksRedux;
