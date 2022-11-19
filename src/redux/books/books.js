@@ -23,6 +23,20 @@ const getBooks = createAsyncThunk(GET_BOOK, async (post, { dispatch }) => {
   });
 });
 
+// Add Book
+const addBook = createAsyncThunk(ADD_BOOK, async (newBook, { dispatch }) => {
+  await fetch(source, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify(newBook),
+  });
+  dispatch({
+    type: ADD_BOOK,
+    book: newBook,
+  });
+});
+
+
 // Book Reducer logic
 const BooksRedux = (state = prevState, action) => {
   switch (action.type) {
