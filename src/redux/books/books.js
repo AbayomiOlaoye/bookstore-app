@@ -19,7 +19,7 @@ const BooksRedux = (state = prevState, action) => {
         action.book,
       ];
     case REMOVE_BOOK:
-      return state.filter((book) => book.item_id !== action.itemB_id);
+      return state.filter((book) => book.item_id !== action.itemB.id);
 
     default: return state;
   }
