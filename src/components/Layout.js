@@ -13,7 +13,7 @@ const Layout = () => (
       <nav className="nav">
         <ul className="navLinks flex">
           <li><Link to="/">Book</Link></li>
-          <li><Link to="category">Category</Link></li>
+          <li><Link to="Categories">Category</Link></li>
         </ul>
       </nav>
     </header>

@@ -7,6 +7,6 @@ const reducers = combineReducers({
   Category: CategoryRedux,
 });
 
-const store = configureStore({ reducer: reducers });
+const safe = configureStore({ reducer: reducers });
 
-export default store;
+export default safe;

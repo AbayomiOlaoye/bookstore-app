@@ -1,12 +1,12 @@
-const ADD_BOOK = 'BookStore/books/ADD_BOOK';
-const REMOVE_BOOK = 'BookStore/books/REMOVE_BOOK';
+const ADD_BOOK = 'bookstore/books/ADD_BOOK';
+const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
 
 const prevState = [];
 
-// Action part
+// Action Logic
 const addBook = (book) => ({
   type: ADD_BOOK,
-  item: book,
+  book,
 });
 
 const removeBook = (id) => ({
@@ -14,17 +14,17 @@ const removeBook = (id) => ({
   id,
 });
 
-// Reducer part
+// Book Reducer logic
 const BooksRedux = (state = prevState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
         ...state,
-        action.item.book,
+        action.book,
       ];
     case REMOVE_BOOK:
       return [
-        state.filter((book) => book.id !== action.id),
+        ...state.filter((book) => book.id !== action.id),
       ];
 
     default: return state;
