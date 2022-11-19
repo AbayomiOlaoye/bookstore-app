@@ -26,7 +26,6 @@ const ShowBooks = () => {
       {books.map((book) => (
         <div key={book.id} className="card">
           <ViewBook book={book} />
-          <input type="button" value="Remove" />
         </div>
       ))}
       <AddBook />

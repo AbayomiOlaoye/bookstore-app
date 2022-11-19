@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Categories = () => (
-  <div>
-    <input type="button" value="Check Status" />
-  </div>
-);
+function Categories() {
+  return (
+    <div>
+      <input type="button" value="Check Status" />
+      <h1>How far?</h1>
+    </div>
+  );
+}
 
 export default Categories;
