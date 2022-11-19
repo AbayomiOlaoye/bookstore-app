@@ -11,6 +11,7 @@ const ViewBook = ({ book }) => (
       Author:
       {book.author}
     </p>
+    <input type="button" value="Remove" />
   </div>
 );
 
