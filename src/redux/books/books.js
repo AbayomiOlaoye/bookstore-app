@@ -7,6 +7,24 @@ const GET_BOOK = 'bookstore/books/GET_BOOK';
 const prevState = [];
 const source = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BoLpCLs90yg1VqJcibSz/books';
 
+// Book Reducer logic
+const BooksRedux = (state = prevState, action) => {
+  switch (action.type) {
+    case GET_BOOK:
+      return action.books;
+
+    case ADD_BOOK:
+      return [
+        ...state,
+        action.book,
+      ];
+    case REMOVE_BOOK:
+      return state.filter((book) => book.item_id !== action.itemB_id);
+
+    default: return state;
+  }
+};
+
 /* Actions Logic */
 
 // Fetch Books
@@ -43,25 +61,9 @@ const removeBook = createAsyncThunk(REMOVE_BOOK, async (id, { dispatch }) => {
   });
   dispatch({
     type: REMOVE_BOOK,
-    book: { id },
+    itemB: { id },
   });
 });
 
-// Book Reducer logic
-const BooksRedux = (state = prevState, action) => {
-  switch (action.type) {
-    case ADD_BOOK:
-      return [
-        ...state,
-        action.book,
-      ];
-    case REMOVE_BOOK:
-      return [
-        ...state.filter((book) => book.id !== action.id),
-      ];
-
-    default: return state;
-  }
-};
 export { getBooks, addBook, removeBook };
 export default BooksRedux;

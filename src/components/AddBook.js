@@ -25,10 +25,10 @@ const AddBook = () => {
   const addNewBook = (e) => {
     e.preventDefault();
     const thisBook = {
+      item_id: uuidv4(),
       title,
       author,
       category,
-      id: uuidv4(),
     };
 
     despatch(addBook(thisBook));
@@ -48,13 +48,13 @@ const AddBook = () => {
         <h2>Add a New Book</h2>
         <input type="text" name="title" placeholder="Title" style={inStyle} onChange={getTitle} value={title} required />
         <input type="text" name="author" placeholder="Author" style={inStyle} onChange={getAuthor} value={author} required />
-        <select onChange={description} name="category">
+        <select onChange={description} name="category" style={inStyle}>
           <option>Leadership</option>
           <option>Romance</option>
           <option>Inspirational</option>
           <option>Adventure</option>
           <option>Investment</option>
-          <option>Erotic</option>
+          <option>Fiction</option>
           <option>Myths & Legends</option>
           <option>Drama</option>
         </select>
