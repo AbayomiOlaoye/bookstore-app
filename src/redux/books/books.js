@@ -36,6 +36,16 @@ const addBook = createAsyncThunk(ADD_BOOK, async (newBook, { dispatch }) => {
   });
 });
 
+// Remove Book
+const removeBook = createAsyncThunk(REMOVE_BOOK, async (id, { dispatch }) => {
+  await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BoLpCLs90yg1VqJcibSz/books/${id}`, {
+    method: 'DELETE',
+  });
+  dispatch({
+    type: REMOVE_BOOK,
+    book: { id },
+  });
+});
 
 // Book Reducer logic
 const BooksRedux = (state = prevState, action) => {
