@@ -1,22 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 
-const ViewBook = ({ book }) => (
-  <div className="booklet">
-    <p className="title">
-      Title:
-      {book.title}
-    </p>
-    <p className="author">
-      Author:
-      {book.author}
-    </p>
-    <input type="button" value="Remove" />
-  </div>
-);
+const ViewBook = (book) => {
+  const { id, title, author } = book;
+  const dispatch = useDispatch();
 
-ViewBook.propTypes = {
-  book: PropTypes.node.isRequired,
+  const deleteBook = () => dispatch(removeBook(id));
+
+  return (
+    <div className="booklet">
+      <p className="title">
+        Title:
+        {title}
+      </p>
+      <p className="author">
+        Author:
+        {author}
+      </p>
+      <input type="button" value="Remove" onClick={deleteBook} />
+    </div>
+  );
 };
 
 export default ViewBook;

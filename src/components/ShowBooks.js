@@ -1,31 +1,15 @@
-import React, { useState } from 'react';
+import React, { useSelector } from 'react-redux';
 import AddBook from './AddBook';
 import ViewBook from './ViewBook';
 
 const ShowBooks = () => {
-  const [books] = useState([
-    {
-      id: 1,
-      title: 'Maximizing Your Potentials',
-      author: 'Dr. Myles Munroe',
-    },
-    {
-      id: 2,
-      title: 'Awakening Sleeping Giant in You',
-      author: 'Oluwatoyin Olaoye',
-    },
-    {
-      id: 3,
-      title: 'The Richest Man in Babylon',
-      author: 'George Clason',
-    },
-  ]);
+  const library = useSelector((state) => state.Books);
 
   return (
     <div>
-      {books.map((book) => (
+      {library.map((book) => (
         <div key={book.id} className="card">
-          <ViewBook book={book} />
+          <ViewBook id={book.id} title={book.title} author={book.author} />
         </div>
       ))}
       <AddBook />
