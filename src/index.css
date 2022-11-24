@@ -1,57 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
+  --azure: #0290ff;
+  --black-two: #121212;
+  --black-5: rgba(0, 0, 0, 0.05);
+  --fff: #fafafa;
+
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
   /* stylelint-disable-next-line csstree/validator */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  box-sizing: border-box;
 }
 
 .logo {
   will-change: filter;
   cursor: pointer;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--azure);
+  margin-left: 53px;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.head {
+  position: relative;
+  justify-content: flex-start;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+svg {
+  position: fixed;
+  top: -27px;
+  left: 65px;
 }
 
 a {
   font-weight: 500;
-  color: #cbccdf;
+  color: var(--black-two);
   text-decoration: inherit;
+  opacity: 0.5;
 }
 
 a:hover {
-  color: seagreen;
+  opacity: 1;
 }
 
 body {
@@ -60,10 +61,21 @@ body {
   height: 100vh;
 }
 
+.line-hr {
+  position: fixed;
+  top: 0;
+  height: 5.938rem;
+  border-bottom: 1px solid var(--black-5);
+  width: 100%;
+  background-color: #fff;
+  z-index: 5;
+}
+
 .header {
+  height: inherit;
   justify-content: space-between;
   width: 80%;
-  padding: 0 3rem;
+  margin: 0 auto;
 }
 
 .flex {
@@ -73,12 +85,51 @@ body {
 
 .navLinks {
   list-style: none;
-  gap: 1.5rem;
+  gap: 2.56rem;
+  text-transform: uppercase;
+  font-size: 0.813rem;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.container {
+  width: 80%;
+  margin: 8rem auto;
+}
+
+.booklet-card {
+  max-width: 100%;
+  height: 10.625rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  margin-bottom: 0.938rem;
+}
+
+.book-info {
+  width: inherit;
+}
+
+.book-actions {
+  gap: 1rem;
+}
+
+.book-actions button {
+  background-color: transparent;
+  border: none;
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
 }
 
 .form {
@@ -123,7 +174,7 @@ input[type="button"]:focus-visible {
   }
 
   a:hover {
-    color: #747bff;
+    color: var(--black-two);
   }
 
   input[type="button"],

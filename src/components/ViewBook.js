@@ -15,20 +15,19 @@ const ViewBook = (book) => {
   const deleteBook = () => dispatch(removeBook(id));
 
   return (
-    <div className="booklet">
-      <p className="title">
-        Title:
-        {title}
-      </p>
-      <p className="author">
-        Author:
-        {author}
-      </p>
-      <p className="category">
-        Category:
-        {category}
-      </p>
-      <input type="button" value="Remove" onClick={deleteBook} />
+    <div className="booklet-card flex">
+      <div className="book-card">
+        <div className="book-info">
+          <p className="category">{category}</p>
+          <p className="title">{title}</p>
+          <p className="author">{author}</p>
+          <div className="book-actions flex">
+            <button type="button">Comment</button>
+            <button type="button" onClick={deleteBook}>Remove</button>
+            <button type="button">Edit</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

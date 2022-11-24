@@ -12,16 +12,15 @@ const ShowBooks = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       {library.map((book) => (
-        <div key={book.item_id} className="card">
-          <ViewBook
-            id={book.item_id}
-            title={book.title}
-            author={book.author}
-            category={book.category}
-          />
-        </div>
+        <ViewBook
+          key={book.item_id}
+          id={book.item_id}
+          title={book.title}
+          author={book.author}
+          category={book.category}
+        />
       ))}
       <AddBook />
     </div>
