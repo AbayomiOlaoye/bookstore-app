@@ -157,7 +157,7 @@ hr {
   margin-bottom: 0.938rem;
   box-shadow: 0 0 60px 0 var(--black-5);
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1fr 1fr;
 }
 
 .book-actions {
@@ -182,20 +182,33 @@ button:nth-of-type(2) {
   padding-right: 0.938rem;
 }
 
-.Oval-2 {
+/* .Oval-2 {
   width: 4.25rem;
   height: 4.25rem;
-  border-style: solid;
-  border-width: 5px;
+  border: 5px solid;
   border-image-source: linear-gradient(to bottom, var(--medium-blue), #379cf6);
   border-image-slice: 1;
-}
+} */
 
 .chart {
   gap: 1.3rem;
   padding-right: 5.75rem;
   border-right: solid 1px #e8e8e8;
   margin-right: 3.688rem;
+}
+
+.percent {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--black-two);
+  font-size: 2rem;
+}
+
+.status {
+  margin-top: 0.438rem;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: var(--black-two);
 }
 
 .current {
@@ -249,18 +262,18 @@ button:nth-of-type(2) {
 
 .book-title {
   width: 41.6rem;
-  max-width: 50%;
+  max-width: 35%;
 }
 
 .book-author {
   width: 20rem;
-  max-width: 25%;
+  max-width: 22%;
 }
 
 .book-category {
   background-color: transparent;
-  width: 15rem;
-  max-width: 18%;
+  width: 17rem;
+  max-width: 13%;
 }
 
 input[type="text"]:focus {
@@ -275,7 +288,7 @@ input[type="text"]:valid {
 input[type="submit"].submitBtn {
   padding: 0.6em 1.2em;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Slab', serif;
   background-color: var(--azure);
   cursor: pointer;
   border-radius: 3px;

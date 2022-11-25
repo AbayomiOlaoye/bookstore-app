@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
+import zeroPercent from '../assets/not_started.svg';
+import eight from '../assets/eight_percent.svg';
+import sixtyFour from '../assets/sixty-four.svg';
 
 const ViewBook = (book) => {
   const {
@@ -16,18 +19,23 @@ const ViewBook = (book) => {
 
   let percentage;
   let chapter;
+  let status;
 
   if (title === 'Midas Touch') {
     percentage = 64;
+    status = sixtyFour;
     chapter = 'Chapter 17';
   } else if (title === 'Maximizing Your potentials') {
     percentage = 8;
+    status = eight;
     chapter = 'Chapter 3: "A Lesson Learned"';
   } else if (title === 'Richest man in babylon') {
     percentage = 0;
+    status = zeroPercent;
     chapter = 'Introduction';
   } else {
     percentage = 0;
+    status = zeroPercent;
     chapter = 'Not started yet';
   }
 
@@ -47,7 +55,7 @@ const ViewBook = (book) => {
       </div>
       <div className="bookData flex">
         <div className="chart flex">
-          <div className="Oval-2" />
+          <img src={status} alt="graphical representation of reader's status" className="Oval-2" />
           <div className="percentage">
             <p className="percent">
               {percentage}
