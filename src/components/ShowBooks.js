@@ -22,6 +22,7 @@ const ShowBooks = () => {
           category={book.category}
         />
       ))}
+      <hr />
       <AddBook />
     </div>
   );

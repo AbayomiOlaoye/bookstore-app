@@ -1,15 +1,12 @@
 import { Outlet, Link } from 'react-router-dom';
+import { BsFillPersonFill } from 'react-icons/bs';
 import React from 'react';
-
-// const header = {
-
-// };
 
 const Layout = () => (
   <div className="line-hr">
     <header className="header flex">
       <div className="head flex">
-        <svg width="118">
+        <svg width="118" className="svg">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" style={{ stopColor: '#242424', stopOpacity: 1 }} />
@@ -28,6 +25,7 @@ const Layout = () => (
           <li><Link to="Categories">Category</Link></li>
         </ul>
       </nav>
+      <div className="user-div"><BsFillPersonFill /></div>
     </header>
     <Outlet />
   </div>
