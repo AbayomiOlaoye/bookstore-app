@@ -12,17 +12,18 @@ const ShowBooks = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      {library.map((book) => (
-        <div key={book.item_id} className="card">
-          <ViewBook
-            id={book.item_id}
-            title={book.title}
-            author={book.author}
-            category={book.category}
-          />
-        </div>
+    <div className="container">
+      {library.map((book, index) => (
+        <ViewBook
+          key={book.item_id}
+          id={book.item_id}
+          title={book.title}
+          author={book.author}
+          category={book.category}
+          index={index}
+        />
       ))}
+      <hr />
       <AddBook />
     </div>
   );

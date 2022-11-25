@@ -7,12 +7,8 @@ const Categories = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <input
-        type="button"
-        value="Check Status"
-        onClick={() => { dispatch(category()); }}
-      />
+    <div className="container">
+      <button type="button" onClick={() => { dispatch(category()); }} className="progressUpdate"> Check Status</button>
       <p>{SUB}</p>
     </div>
   );
