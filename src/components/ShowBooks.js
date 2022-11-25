@@ -13,13 +13,14 @@ const ShowBooks = () => {
 
   return (
     <div className="container">
-      {library.map((book) => (
+      {library.map((book, index) => (
         <ViewBook
           key={book.item_id}
           id={book.item_id}
           title={book.title}
           author={book.author}
           category={book.category}
+          index={index}
         />
       ))}
       <hr />

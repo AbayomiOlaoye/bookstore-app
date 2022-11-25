@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
@@ -46,9 +47,26 @@ const AddBook = () => {
   const description = (e) => setCategory(e.target.value);
 
   return (
-    <div className="form-div">
-      <form className="form" style={styleBook} onSubmit={addNewBook}>
-        <h2>Add a New Book</h2>
+    <motion.div className="form-div">
+      <motion.form
+        className="form"
+        style={styleBook}
+        onSubmit={addNewBook}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+      >
+        <motion.h2
+          initial={{ color: '#121212', y: -100 }}
+          animate={{ color: '#888', y: 0 }}
+          transition={
+            {
+              duration: 2, ease: 'linear', type: 'tween',
+            }
+          }
+        >
+          Add a New Book
+        </motion.h2>
         <div className="inputElems flex">
           <input type="text" name="title" className="book-title" placeholder="Title" style={inStyle} onChange={getTitle} value={title} required />
           <input type="text" name="author" className="book-author" placeholder="Author" style={inStyle} onChange={getAuthor} value={author} required />
@@ -65,8 +83,8 @@ const AddBook = () => {
           </select>
           <input type="submit" value="Add" className="submitBtn" />
         </div>
-      </form>
-    </div>
+      </motion.form>
+    </motion.div>
   );
 };
 

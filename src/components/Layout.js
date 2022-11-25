@@ -1,6 +1,22 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
+import { motion } from 'framer-motion';
 import React from 'react';
+
+const logoAnimation = {
+  start: {
+    opacity: 0,
+    pathLength: 1,
+  },
+  finished: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 2,
+      ease: 'easeInOut',
+    },
+  },
+};
 
 const Layout = () => (
   <div className="line-hr">
@@ -13,7 +29,16 @@ const Layout = () => (
               <stop offset="100%" style={{ stopColor: '#0290ff', stopOpacity: 1 }} />
             </linearGradient>
           </defs>
-          <ellipse cx="100" cy="70" rx="35" ry="25" fill="url(#grad1)" />
+          <motion.ellipse
+            cx="100"
+            cy="70"
+            rx="35"
+            ry="25"
+            fill="url(#grad1)"
+            variants={logoAnimation}
+            initial="start"
+            animate="finished"
+          />
           <text fill="#ffffff" fontFamily="system-ui" fontSize="30" x="80" y="80">BS</text>
           Sorry, your browser does not support inline SVG.
         </svg>
@@ -21,8 +46,8 @@ const Layout = () => (
       </div>
       <nav className="nav">
         <ul className="navLinks flex">
-          <li><Link to="/">Book</Link></li>
-          <li><Link to="Categories">Category</Link></li>
+          <li><NavLink to="/">Book</NavLink></li>
+          <li><NavLink to="/Categories">Category</NavLink></li>
         </ul>
       </nav>
       <div className="user-div"><BsFillPersonFill /></div>
