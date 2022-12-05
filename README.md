@@ -9,6 +9,9 @@ BookStore App is an amazng productiivity tool that provides MVP feel with its ba
 - React Library/Framework
 - Github Action
 
+## Live Demo
+Follow [this](https://bookrackcms.netlify.app/) link to view the demo page
+
 ## Prerequisites
  Opening this file requires npm (node.js) to be installed on your computer before can work on it.
 
